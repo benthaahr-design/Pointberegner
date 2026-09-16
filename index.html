@@ -160,8 +160,7 @@ if(tv2MainSelected){ includedNames.push('TV SYD','TV MIDTVEST'); }
  document.getElementById('total').innerHTML=total;
  document.getElementById('price').innerHTML=price;
  var notice=document.getElementById('notice');
- notice.innerHTML=selectedPlay && deduct ? 'TV 2 Play er valgt: '+deduct+' point fra valgte TV 2-kanaler er automatisk modregnet.' : '';
-
+ notice.innerHTML=selectedPlay && deduct ? 'TV 2 Play er valgt – valgte TV 2-kanaler, som er inkluderet i TV 2 Play, tæller ikke ekstra med i pointberegningen.' : '';
  var messages=[];
  if(selectedPlay){
    messages.push('<b>✓ '+playName+' er valgt.</b><br>Følgende kanaler er inkluderet og koster derfor ikke ekstra point: <b>'+includedNames.join(' · ')+'</b>.');
