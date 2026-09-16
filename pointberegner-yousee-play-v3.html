@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="da"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pointberegner for YouSee Play</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7f9;color:#222}
+.wrap{max-width:1100px;margin:auto;padding:24px} h1{color:#07558f}
+.info{background:#eef6fd;border-left:6px solid #07558f;padding:16px;border-radius:8px;line-height:1.55}
+h2{background:#07558f;color:white;padding:13px 15px;border-radius:8px 8px 0 0;margin:28px 0 0}
+table{width:100%;border-collapse:collapse;background:white} th,td{border:1px solid #ddd;padding:11px}
+th{background:#eef3f7;text-align:left} .points,.choose{text-align:center;width:90px}
+input[type=checkbox]{width:22px;height:22px;cursor:pointer}
+.result{background:white;border-left:7px solid #32b34a;box-shadow:0 2px 12px #0002;padding:18px;margin-top:28px;border-radius:10px}
+.summary{display:flex;gap:18px;flex-wrap:wrap} .box{background:#f1f7fc;border:1px solid #c9e0f2;border-radius:9px;padding:14px;min-width:220px}
+.big{font-size:30px;font-weight:bold;color:#07558f} .notice{margin-top:12px;color:#176b2b;font-weight:bold}
+.saving{color:#16863a;font-weight:bold} .dearer{color:#b52b27;font-weight:bold}
+button{margin-top:12px;background:#07558f;color:#fff;border:0;border-radius:6px;padding:10px 18px;cursor:pointer}
+@media(max-width:650px){.wrap{padding:10px}th,td{padding:8px 5px;font-size:14px}.points,.choose{width:55px}}
+</style></head><body><div class="wrap">
+<h1>Beregn prisen på din egen YouSee Play-pakke</h1>
+<p>Marker de streamingtjenester og TV-kanaler, du ønsker. Point og pris beregnes automatisk.</p>
+<div class="info"><b>YouSee Play:</b> De første 10 point koster <b>340 kr./md.</b> Herefter koster hvert ekstra point <b>10 kr./md.</b><br><br>
+<b>TV 2 Play:</b> Hvis TV 2 Play er valgt, modregnes pointene automatisk for valgte TV 2-kanaler.</div>
+
+<h2>Streamingtjenester</h2><table><thead><tr><th>Tjeneste</th><th class="points">Point</th><th class="choose">Vælg</th></tr></thead><tbody>
+<tr><td><b>NETFLIX Basis</b></td><td class="points">10</td><td class="choose"><input type="checkbox" class="choice " data-p="10"></td></tr>
+<tr><td><b>NETFLIX Standard</b></td><td class="points">14</td><td class="choose"><input type="checkbox" class="choice " data-p="14"></td></tr>
+<tr><td><b>NETFLIX Premium</b></td><td class="points">18</td><td class="choose"><input type="checkbox" class="choice " data-p="18"></td></tr>
+<tr><td><b>TV 2 Play Favorit</b></td><td class="points">15</td><td class="choose"><input type="checkbox" class="choice tv2play" data-p="15"></td></tr>
+<tr><td><b>TV 2 Play Favorit m/rekl.</b></td><td class="points">13</td><td class="choose"><input type="checkbox" class="choice tv2play" data-p="13"></td></tr>
+<tr><td><b>TV 2 Play Favorit + Sport</b></td><td class="points">22</td><td class="choose"><input type="checkbox" class="choice tv2play" data-p="22"></td></tr>
+<tr><td><b>TV 2 Play Favorit + Sport m/rekl.</b></td><td class="points">20</td><td class="choose"><input type="checkbox" class="choice tv2play" data-p="20"></td></tr>
+<tr><td><b>Viaplay Film &amp; Serier m/rekl.</b></td><td class="points">8</td><td class="choose"><input type="checkbox" class="choice " data-p="8"></td></tr>
+<tr><td><b>Viaplay Film &amp; Serier u/rekl.</b></td><td class="points">12</td><td class="choose"><input type="checkbox" class="choice " data-p="12"></td></tr>
+<tr><td><b>Viaplay Champions League m/rekl. + F&amp;S</b></td><td class="points">21</td><td class="choose"><input type="checkbox" class="choice " data-p="21"></td></tr>
+<tr><td><b>Viaplay Champions League u/rekl. + F&amp;S</b></td><td class="points">24</td><td class="choose"><input type="checkbox" class="choice " data-p="24"></td></tr>
+<tr><td><b>Viaplay Dansk fodbold m/rekl. + F&amp;S</b></td><td class="points">21</td><td class="choose"><input type="checkbox" class="choice " data-p="21"></td></tr>
+<tr><td><b>Viaplay Dansk fodbold u/rekl. + F&amp;S</b></td><td class="points">24</td><td class="choose"><input type="checkbox" class="choice " data-p="24"></td></tr>
+<tr><td><b>Viaplay Premium m/rekl.</b></td><td class="points">37</td><td class="choose"><input type="checkbox" class="choice " data-p="37"></td></tr>
+<tr><td><b>Viaplay Premium u/rekl.</b></td><td class="points">40</td><td class="choose"><input type="checkbox" class="choice " data-p="40"></td></tr>
+<tr><td><b>Disney+ Standard m. reklamer</b></td><td class="points">4</td><td class="choose"><input type="checkbox" class="choice " data-p="4"></td></tr>
+<tr><td><b>Disney+ Standard</b></td><td class="points">7</td><td class="choose"><input type="checkbox" class="choice " data-p="7"></td></tr>
+<tr><td><b>Disney+ Premium</b></td><td class="points">11</td><td class="choose"><input type="checkbox" class="choice " data-p="11"></td></tr>
+<tr><td><b>HBO Max Basis m/rekl.</b></td><td class="points">7</td><td class="choose"><input type="checkbox" class="choice " data-p="7"></td></tr>
+<tr><td><b>HBO Max Basis m/rekl. + Sport</b></td><td class="points">11</td><td class="choose"><input type="checkbox" class="choice " data-p="11"></td></tr>
+<tr><td><b>HBO Max Standard u/sport</b></td><td class="points">10</td><td class="choose"><input type="checkbox" class="choice " data-p="10"></td></tr>
+<tr><td><b>HBO Max Standard m/sport</b></td><td class="points">14</td><td class="choose"><input type="checkbox" class="choice " data-p="14"></td></tr>
+<tr><td><b>HBO Max Premium</b></td><td class="points">14</td><td class="choose"><input type="checkbox" class="choice " data-p="14"></td></tr>
+<tr><td><b>HBO Max Premium + Sport</b></td><td class="points">18</td><td class="choose"><input type="checkbox" class="choice " data-p="18"></td></tr>
+<tr><td><b>SkyShowtime</b></td><td class="points">6</td><td class="choose"><input type="checkbox" class="choice " data-p="6"></td></tr>
+<tr><td><b>Prime Video</b></td><td class="points">5</td><td class="choose"><input type="checkbox" class="choice " data-p="5"></td></tr>
+<tr><td><b>Nordisk Film+</b></td><td class="points">4</td><td class="choose"><input type="checkbox" class="choice " data-p="4"></td></tr>
+<tr><td><b>Nick+</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>BBC Nordic+</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>National Geographic</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+</tbody></table>
+
+<h2>TV-kanaler</h2><table><thead><tr><th>Kanal</th><th class="points">Point</th><th class="choose">Vælg</th></tr></thead><tbody>
+<tr><td><b>V Sport 3+</b></td><td class="points">5</td><td class="choose"><input type="checkbox" class="choice " data-p="5"></td></tr>
+<tr><td><b>V Sport 3Sport</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>V Sport 3Max</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>V Sport See</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>TV 2 Sport</b></td><td class="points">4</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="4"></td></tr>
+<tr><td><b>TV 2 Sport X</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="3"></td></tr>
+<tr><td><b>Eurosport 1</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Eurosport 2</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Sport Live</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>V Sport Golf</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>V Sport Ultra HD</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Motorvision</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>TV 2</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="3"></td></tr>
+<tr><td><b>TV 2 Charlie</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="2"></td></tr>
+<tr><td><b>TV 2 Echo</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="2"></td></tr>
+<tr><td><b>TV3</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>3+</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Kanal 5</b></td><td class="points">3</td><td class="choose"><input type="checkbox" class="choice " data-p="3"></td></tr>
+<tr><td><b>Kanal 4</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Kanal 6</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Kanal 9</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>TLC</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>BBC Nordic</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>V Series</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Sat 1</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>TVE</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Pro7</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Rai 1</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>France 2</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Blue Hustler</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice " data-p="2"></td></tr>
+<tr><td><b>Mezzo</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Disney Channel</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Nickelodeon</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Nick Jr</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Nick Toons</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Cartoon Network</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Cartoonito</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>TV 2 News</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="2"></td></tr>
+<tr><td><b>CNN</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>BBC News</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>CNBC Europe</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Euronews</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Bloomberg</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Al Jazeera</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>NatGeo Wild</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>NatGeo</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Animal Planet</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Viasat History</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Viasat Explore</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Viasat Nature</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Discovery</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>ID</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>History</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>History 2</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>TV 2 Fri</b></td><td class="points">2</td><td class="choose"><input type="checkbox" class="choice tv2" data-p="2"></td></tr>
+<tr><td><b>DK4</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>3sat</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Arte</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>TV5Monde</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>Travel</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+<tr><td><b>MyZen TV</b></td><td class="points">1</td><td class="choose"><input type="checkbox" class="choice " data-p="1"></td></tr>
+</tbody></table>
+
+<div class="result"><div class="summary">
+<div class="box">Point i alt<div class="big"><span id="total">0</span> point</div></div>
+<div class="box">Beregnet pris pr. måned<div class="big"><span id="price">340</span> kr.</div></div>
+</div><div id="notice" class="notice"></div>
+<table style="margin-top:14px"><thead><tr><th>Pakke</th><th>Pris pr. md.</th><th>Forskel til Play</th></tr></thead><tbody>
+<tr><td>Grundpakke</td><td>355 kr.</td><td id="g"></td></tr>
+<tr><td>Mellempakke</td><td>640 kr.</td><td id="m"></td></tr>
+<tr><td>Fuldpakke</td><td>780 kr.</td><td id="f"></td></tr>
+</tbody></table><button type="button" id="reset">Nulstil mine valg</button></div>
+</div>
+<script>
+function calc(){
+ var boxes=document.querySelectorAll('.choice'), tv2play=false, total=0, deduct=0, i;
+ for(i=0;i<boxes.length;i++) if(boxes[i].checked && boxes[i].className.indexOf('tv2play')>-1) tv2play=true;
+ for(i=0;i<boxes.length;i++){ if(!boxes[i].checked) continue; var p=parseInt(boxes[i].getAttribute('data-p'),10)||0;
+   if(tv2play && boxes[i].classList.contains('tv2')){deduct+=p;continue;} total+=p; }
+ var price=340+(total>10?(total-10)*10:0);
+ document.getElementById('total').innerHTML=total; document.getElementById('price').innerHTML=price;
+ document.getElementById('notice').innerHTML=deduct?'TV 2 Play er valgt: '+deduct+' point fra valgte TV 2-kanaler er automatisk modregnet.':'';
+ cmp('g',355,price);cmp('m',640,price);cmp('f',780,price);
+}
+function cmp(id,p,price){var d=p-price,e=document.getElementById(id);e.className=d>0?'saving':d<0?'dearer':'';
+e.innerHTML=d>0?'Du sparer '+d+' kr./md.':d<0?'Play er '+(-d)+' kr. dyrere':'Samme pris';}
+var boxes=document.querySelectorAll('.choice');
+for(var i=0;i<boxes.length;i++) boxes[i].onchange=calc;
+document.getElementById('reset').onclick=function(){for(var i=0;i<boxes.length;i++)boxes[i].checked=false;calc();};
+calc();
+</script></body></html>
