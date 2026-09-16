@@ -143,7 +143,10 @@ function calc(){
  var sportPlay=selectedPlay && playName.indexOf('Sport')>-1;
  var includedNames=['TV 2','TV 2 News','TV 2 Charlie','TV 2 Echo','TV 2 Fri'];
  if(sportPlay){ includedNames.push('TV 2 Sport','TV 2 Sport X'); }
-
+var tv2Main=document.querySelector('.tv2main');
+var tv2MainSelected=tv2Main && tv2Main.checked;
+var regionalNames=['TV SYD','TV MIDTVEST'];
+if(tv2MainSelected){ includedNames.push('TV SYD','TV MIDTVEST'); }
  for(i=0;i<boxes.length;i++){
    if(!boxes[i].checked) continue;
    var p=parseInt(boxes[i].getAttribute('data-p'),10)||0;
