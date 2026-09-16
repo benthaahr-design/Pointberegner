@@ -178,7 +178,11 @@ var boxes=document.querySelectorAll('.choice');
 for(var i=0;i<boxes.length;i++) boxes[i].onchange=function(){
   if(this.checked && this.classList.contains('tv2play')){
     var plays=document.querySelectorAll('.tv2play');
-    for(var j=0;j<plays.length;j++) if(plays[j]!==this) plays[j].checked=false;
+    for(var j=0;j<plays.length;j++) if(plays[j]!==this) plays[j].checked=false;}
+ if(this.checked && this.getAttribute('data-name').indexOf('NETFLIX')===0){
+  var netflix=document.querySelectorAll('input[data-name^="NETFLIX"]');
+  for(var n=0;n<netflix.length;n++) if(netflix[n]!==this) netflix[n].checked=false;
+}
   }
   calc();
 };
