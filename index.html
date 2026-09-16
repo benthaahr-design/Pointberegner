@@ -190,9 +190,30 @@ for(var i=0;i<boxes.length;i++) boxes[i].onchange=function(){
     var netflix=document.querySelectorAll('input[data-name^="NETFLIX"]');
     for(var n=0;n<netflix.length;n++){
       if(netflix[n]!==this) netflix[n].checked=false;
-    }
+    }}
+ // Kun én Viaplay-variant kan vælges
+if(this.checked && this.getAttribute('data-name').indexOf('Viaplay')===0){
+  var viaplay=document.querySelectorAll('input[data-name^="Viaplay"]');
+  for(var v=0;v<viaplay.length;v++){
+    if(viaplay[v]!==this) viaplay[v].checked=false;
   }
+}
 
+// Kun én Disney+-variant kan vælges
+if(this.checked && this.getAttribute('data-name').indexOf('Disney+')===0){
+  var disney=document.querySelectorAll('input[data-name^="Disney+"]');
+  for(var d=0;d<disney.length;d++){
+    if(disney[d]!==this) disney[d].checked=false;
+  }
+}
+
+// Kun én HBO Max-variant kan vælges
+if(this.checked && this.getAttribute('data-name').indexOf('HBO Max')===0){
+  var hbo=document.querySelectorAll('input[data-name^="HBO Max"]');
+  for(var h=0;h<hbo.length;h++){
+    if(hbo[h]!==this) hbo[h].checked=false;
+  }
+}
   calc();
 };
 document.getElementById('reset').onclick=function(){for(var i=0;i<boxes.length;i++)boxes[i].checked=false;calc();};
