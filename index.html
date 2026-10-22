@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="da"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pointberegner for YouSee Play</title>
+<title>Pointberegner for YouSee Play – 2027</title>
 <style>
 body{font-family:Arial,sans-serif;margin:0;background:#f5f7f9;color:#222}
 .wrap{max-width:1100px;margin:auto;padding:24px} h1{color:#07558f}
@@ -18,8 +18,9 @@ button{margin-top:12px;background:#07558f;color:#fff;border:0;border-radius:6px;
 @media(max-width:650px){.wrap{padding:10px}th,td{padding:8px 5px;font-size:14px}.points,.choose{width:55px}}
 </style></head><body><div class="wrap">
 <h1>Beregn prisen på din egen YouSee Play-pakke</h1>
+<p><strong>Priser gældende fra 1. januar 2027</strong></p>
 <p>Marker de streamingtjenester og TV-kanaler, du ønsker. Point og pris beregnes automatisk.</p>
-<div class="info"><b>YouSee Play:</b> De første 10 point koster <b>340 kr./md.</b> Herefter koster hvert ekstra point <b>10 kr./md.</b><br><br>
+<div class="info"><b>YouSee Play:</b> De første 10 point koster <b>365 kr./md.</b> Herefter koster hvert ekstra point <b>10 kr./md.</b><br><br>
 <b>TV 2 Play:</b> Hvis TV 2 Play er valgt, modregnes pointene automatisk for valgte TV 2-kanaler.</div>
 
 <h2>Streamingtjenester</h2><table><thead><tr><th>Tjeneste</th><th class="points">Point</th><th class="choose">Vælg</th></tr></thead><tbody>
@@ -121,13 +122,13 @@ button{margin-top:12px;background:#07558f;color:#fff;border:0;border-radius:6px;
 
 <div class="result"><div class="summary">
 <div class="box">Point i alt<div class="big"><span id="total">0</span> point</div></div>
-<div class="box">Beregnet pris pr. måned<div class="big"><span id="price">340</span> kr.</div></div>
+<div class="box">Beregnet pris pr. måned<div class="big"><span id="price">365</span> kr.</div></div>
 </div><div id="notice" class="notice"></div>
 <div id="included" class="included"></div>
 <table style="margin-top:14px"><thead><tr><th>Pakke</th><th>Pris pr. md.</th><th>Forskel til Play</th></tr></thead><tbody>
-<tr><td>Grundpakke</td><td>355 kr.</td><td id="g"></td></tr>
-<tr><td>Mellempakke</td><td>640 kr.</td><td id="m"></td></tr>
-<tr><td>Fuldpakke</td><td>780 kr.</td><td id="f"></td></tr>
+<tr><td>Grundpakke</td><td>380 kr.</td><td id="g"></td></tr>
+<tr><td>Mellempakke</td><td>680 kr.</td><td id="m"></td></tr>
+<tr><td>Fuldpakke</td><td>830 kr.</td><td id="f"></td></tr>
 </tbody></table><button type="button" id="reset">Nulstil mine valg</button></div>
 </div>
 <script>
@@ -156,7 +157,7 @@ if(tv2MainSelected){ includedNames.push('TV SYD','TV MIDTVEST'); }
    if(selectedPlay && boxes[i].classList.contains('tv2') && includedNames.indexOf(name)>-1){ deduct+=p; continue; }
    total+=p;
  }
- var price=340+(total>10?(total-10)*10:0);
+ var price=365+(total>10?(total-10)*10:0);
  document.getElementById('total').innerHTML=total;
  document.getElementById('price').innerHTML=price;
  var notice=document.getElementById('notice');
@@ -170,7 +171,7 @@ if(tv2MainSelected){ includedNames.push('TV SYD','TV MIDTVEST'); }
    
  }
  document.getElementById('included').innerHTML=messages.join('<br><br>');
- cmp('g',355,price);cmp('m',640,price);cmp('f',780,price);
+ cmp('g',380,price);cmp('m',680,price);cmp('f',830,price);
 }
 function cmp(id,p,price){var d=p-price,e=document.getElementById(id);e.className=d>0?'saving':d<0?'dearer':'';
 e.innerHTML=d>0?'Du sparer '+d+' kr./md.':d<0?'Play er '+(-d)+' kr. dyrere':'Samme pris';}
